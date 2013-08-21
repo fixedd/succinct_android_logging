@@ -364,7 +364,7 @@ public final class Log {
 				PackageManager.GET_META_DATA).metaData.getString("max_log_level"));
 			int currentLogLevel = stringLogLevelToNumeric(logLevel);
 
-			if (currentLogLevel >= maxLogLevel) {
+			if (currentLogLevel <= maxLogLevel) {
 				return true;
 			}
 		} catch (NameNotFoundException e) {
@@ -381,7 +381,7 @@ public final class Log {
 	 * @return
 	 */
 	private static int stringLogLevelToNumeric(String logLevel) {
-		if (logLevel == LEVEL_VERBOSE) {
+		if (logLevel == LEVEL_NONE) {
 			return -1;
 		} else if (logLevel == LEVEL_ERROR) {
 			return 3;
