@@ -381,20 +381,20 @@ public final class Log {
 	 * @return
 	 */
 	private static int stringLogLevelToNumeric(String logLevel) {
-		if (logLevel == LEVEL_NONE) {
+		if (logLevel.contentEquals(LEVEL_NONE)) {
 			return -1;
-		} else if (logLevel == LEVEL_ERROR) {
+		} else if (logLevel.contentEquals(LEVEL_ERROR)) {
 			return 3;
-		} else if (logLevel == LEVEL_WARN) {
+		} else if (logLevel.contentEquals(LEVEL_WARN)) {
 			return 4;
-		} else if (logLevel == LEVEL_INFO) {
+		} else if (logLevel.contentEquals(LEVEL_INFO)) {
 			return 6;
-		} else if (logLevel == LEVEL_DEBUG) {
+		} else if (logLevel.contentEquals(LEVEL_DEBUG)) {
 			return 7;
-		} else if (logLevel == LEVEL_VERBOSE) {
+		} else if (logLevel.contentEquals(LEVEL_VERBOSE)) {
 			return 100;
 		}
-		throw new IllegalArgumentException("Invalid log level.");
+		throw new IllegalArgumentException("Invalid log level (" + logLevel + ").");
 	}
 
 }
