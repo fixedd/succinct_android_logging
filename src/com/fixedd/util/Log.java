@@ -78,6 +78,19 @@ public final class Log {
 			android.util.Log.v(getTag(obj), msg, tr);
 		}
 	}
+	
+	/**
+	 * Write a "verbose" message to the log. 
+	 * 
+	 * @param context Any context will do (application, service, activity, etc).
+	 * @param obj The object whose name should be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void v(Context context, Object obj, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_VERBOSE)) {
+			android.util.Log.v(getTag(obj), tr.getMessage(), tr);
+		}
+	}
 
 	/**
 	 * Write a "verbose" message to the log. 
@@ -106,6 +119,20 @@ public final class Log {
 			android.util.Log.v(getTag(context), msg, tr);
 		}
 	}
+	
+	/**
+	 * Write a "verbose" message to the log. 
+	 * 
+	 * @param context Use the "closest" context object possible (e.g. if you're 
+	 *                in an activity or service use that and not the 
+	 *                application activity) as this will be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void v(Context context, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_VERBOSE)) {
+			android.util.Log.v(getTag(context), tr.getMessage(), tr);
+		}
+	}
 
 	/**
 	 * Write a "debug" message to the log. 
@@ -131,6 +158,19 @@ public final class Log {
 	public static void d(Context context, Object obj, String msg, Throwable tr) {
 		if (isAllowed(context, Log.LEVEL_DEBUG)) {
 			android.util.Log.d(getTag(obj), msg, tr);
+		}
+	}
+	
+	/**
+	 * Write a "debug" message to the log. 
+	 * 
+	 * @param context Any context will do (application, service, activity, etc).
+	 * @param obj The object whose name should be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void d(Context context, Object obj, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_DEBUG)) {
+			android.util.Log.d(getTag(obj), tr.getMessage(), tr);
 		}
 	}
 
@@ -162,6 +202,20 @@ public final class Log {
 			android.util.Log.d(getTag(context), msg, tr);
 		}
 	}
+	
+	/**
+	 * Write a "debug" message to the log. 
+	 * 
+	 * @param context Use the "closest" context object possible (e.g. if you're 
+	 *                in an activity or service use that and not the 
+	 *                application activity) as this will be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void d(Context context, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_DEBUG)) {
+			android.util.Log.d(getTag(context), tr.getMessage(), tr);
+		}
+	}
 
 	/**
 	 * Write a "info" message to the log. 
@@ -187,6 +241,19 @@ public final class Log {
 	public static void i(Context context, Object obj, String msg, Throwable tr) {
 		if (isAllowed(context, Log.LEVEL_INFO)) {
 			android.util.Log.i(getTag(obj), msg, tr);
+		}
+	}
+	
+	/**
+	 * Write a "info" message to the log. 
+	 * 
+	 * @param context Any context will do (application, service, activity, etc).
+	 * @param obj The object whose name should be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void i(Context context, Object obj, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_INFO)) {
+			android.util.Log.i(getTag(obj), tr.getMessage(), tr);
 		}
 	}
 
@@ -218,6 +285,20 @@ public final class Log {
 			android.util.Log.i(getTag(context), msg, tr);
 		}
 	}
+	
+	/**
+	 * Write a "info" message to the log. 
+	 * 
+	 * @param context Use the "closest" context object possible (e.g. if you're 
+	 *                in an activity or service use that and not the 
+	 *                application activity) as this will be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void i(Context context, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_INFO)) {
+			android.util.Log.i(getTag(context), tr.getMessage(), tr);
+		}
+	}
 
 	/**
 	 * Write a "warn" message to the log. 
@@ -243,6 +324,19 @@ public final class Log {
 	public static void w(Context context, Object obj, String msg, Throwable tr) {
 		if (isAllowed(context, Log.LEVEL_WARN)) {
 			android.util.Log.w(getTag(obj), msg, tr);
+		}
+	}
+	
+	/**
+	 * Write a "warn" message to the log. 
+	 * 
+	 * @param context Any context will do (application, service, activity, etc).
+	 * @param obj The object whose name should be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void w(Context context, Object obj, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_WARN)) {
+			android.util.Log.w(getTag(obj), tr.getMessage(), tr);
 		}
 	}
 
@@ -274,6 +368,20 @@ public final class Log {
 			android.util.Log.w(getTag(context), msg, tr);
 		}
 	}
+	
+	/**
+	 * Write a "warn" message to the log. 
+	 * 
+	 * @param context Use the "closest" context object possible (e.g. if you're 
+	 *                in an activity or service use that and not the 
+	 *                application activity) as this will be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void w(Context context, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_WARN)) {
+			android.util.Log.w(getTag(context), tr.getMessage(), tr);
+		}
+	}
 
 	/**
 	 * Write a "error" message to the log. 
@@ -299,6 +407,19 @@ public final class Log {
 	public static void e(Context context, Object obj, String msg, Throwable tr) {
 		if (isAllowed(context, Log.LEVEL_ERROR)) {
 			android.util.Log.e(getTag(obj), msg, tr);
+		}
+	}
+	
+	/**
+	 * Write a "error" message to the log. 
+	 * 
+	 * @param context Any context will do (application, service, activity, etc).
+	 * @param obj The object whose name should be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void e(Context context, Object obj, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_ERROR)) {
+			android.util.Log.e(getTag(obj), tr.getMessage(), tr);
 		}
 	}
 
@@ -328,6 +449,20 @@ public final class Log {
 	public static void e(Context context, String msg, Throwable tr) {
 		if (isAllowed(context, Log.LEVEL_ERROR)) {
 			android.util.Log.e(getTag(context), msg, tr);
+		}
+	}
+	
+	/**
+	 * Write a "error" message to the log. 
+	 * 
+	 * @param context Use the "closest" context object possible (e.g. if you're 
+	 *                in an activity or service use that and not the 
+	 *                application activity) as this will be used as the tag.
+	 * @param tr A throwable whose stack trace will also be written.
+	 */
+	public static void e(Context context, Throwable tr) {
+		if (isAllowed(context, Log.LEVEL_ERROR)) {
+			android.util.Log.e(getTag(context), tr.getMessage(), tr);
 		}
 	}
 
