@@ -503,9 +503,11 @@ public final class Log {
 				return true;
 			}
 		} catch (NameNotFoundException e) {
-			android.util.Log.e("Log", "Could not find log level in manifest.");
+			android.util.Log.e("Log", "Could not find log level in Android manifest.");
+		} catch (Exception e) {
+			android.util.Log.e("Log", e.getMessage(), e);
 		}
-		return false;
+		return true;
 	}
 
 	/**
